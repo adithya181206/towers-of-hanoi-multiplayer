@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Towers of Hanoi – Multiplayer</title>
+
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<h1>🗼 Towers of Hanoi</h1>
+
+<section class="setup">
+  <h2>🎮 Game Setup</h2>
+  <div class="grid">
+    <select id="mode">
+      <option value="single">Single Player</option>
+      <option value="multi">Multiplayer</option>
+    </select>
+
+    <input id="playerName" placeholder="Your Name">
+    <input id="roomId" placeholder="Room Code">
+
+    <select id="maxPlayers">
+      <option value="2">2 Players</option>
+      <option value="3">3 Players</option>
+      <option value="4">4 Players</option>
+      <option value="5">5 Players</option>
+      <option value="6">6 Players</option>
+      <option value="7">7 Players</option>
+      <option value="8">8 Players</option>
+    </select>
+
+    <input type="number" id="diskCount" min="3" max="9" value="4">
+
+    <button id="startBtn">Start</button>
+    <button id="inviteBtn">Invite</button>
+  </div>
+
+  <div id="playerCount">Players in room: 0</div>
+</section>
+
+<section class="board">
+  <div class="tower" data-i="0">
+    <div class="rod"></div>
+    <div class="base"></div>
+  </div>
+
+  <div class="tower" data-i="1">
+    <div class="rod"></div>
+    <div class="base"></div>
+  </div>
+
+  <div class="tower target" data-i="2">
+    <span class="target-label">TARGET</span>
+    <div class="rod"></div>
+    <div class="base"></div>
+  </div>
+</section>
+
+<div class="info">
+  Moves: <span id="moves">0</span>
+</div>
+
+<section class="chat" id="chatSection">
+  <h2>💬 Chat</h2>
+  <div class="chat-box" id="chatBox"></div>
+  <div class="chat-input">
+    <input id="chatInput" placeholder="Message">
+    <button id="sendChatBtn">Send</button>
+  </div>
+</section>
+
+<div class="modal" id="resultModal">
+  <div class="modal-box">
+    <h2 id="resultTitle"></h2>
+    <div id="resultStats"></div>
+    <button id="playAgainBtn">Play Again</button>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
