@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Towers of Hanoi – Multiplayer</title>
+<title>Towers of Hanoi</title>
 
 <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
@@ -42,30 +42,23 @@
     <button id="inviteBtn">Invite</button>
   </div>
 
-  <div id="playerCount">Players in room: 0</div>
+  <div id="playerCount">Single Player Mode</div>
 </section>
 
 <section class="board">
   <div class="tower" data-i="0">
-    <div class="rod"></div>
-    <div class="base"></div>
+    <div class="rod"></div><div class="base"></div>
   </div>
-
   <div class="tower" data-i="1">
-    <div class="rod"></div>
-    <div class="base"></div>
+    <div class="rod"></div><div class="base"></div>
   </div>
-
   <div class="tower target" data-i="2">
     <span class="target-label">TARGET</span>
-    <div class="rod"></div>
-    <div class="base"></div>
+    <div class="rod"></div><div class="base"></div>
   </div>
 </section>
 
-<div class="info">
-  Moves: <span id="moves">0</span>
-</div>
+<div class="info">Moves: <span id="moves">0</span></div>
 
 <section class="chat" id="chatSection">
   <h2>💬 Chat</h2>
@@ -80,7 +73,10 @@
   <div class="modal-box">
     <h2 id="resultTitle"></h2>
     <div id="resultStats"></div>
-    <button id="playAgainBtn">Play Again</button>
+    <div class="modal-actions">
+      <button id="playAgainBtn">Play Again</button>
+      <button id="exitBtn" class="exit">Exit</button>
+    </div>
   </div>
 </div>
 
